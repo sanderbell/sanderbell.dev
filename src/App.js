@@ -3,79 +3,139 @@ import './App.css';
 import cmairImage from './static/cmair.png';
 import rewordsImage from './static/rewords.png';
 import shouldImage from './static/should.png';
+import { useState } from 'react';
 
 function App() {
+  const [projectsShown, setProjectsShown] = useState(true);
+  const [aboutShown, setAboutShown] = useState(false);
+
+  function showProject() {
+    setProjectsShown(true);
+    setAboutShown(false);
+  }
+
+  function showAbout() {
+    setProjectsShown(false);
+    setAboutShown(true);
+  }
+
   return (
     <div className='App'>
       <div id='flex-container'>
         <section id='hi'>
-          <h1>Hello, I'm Sander</h1>
-          <p id='intro'>Lorem Ipsum is simply dummy text of the printing and</p>
+          <h1 id='hello-sander'>Hello, I'm Sander</h1>
+          <p id='intro'>
+            Lorem Ipsum is simply dummys imply dummysimply dummy textLorem Ipsum
+            is simply dummy text of the printing and
+          </p>
           <nav>
-            <ul>Project</ul>
-            <ul>About</ul>
+            <ul>
+              <li
+                className={projectsShown && 'selected'}
+                onClick={showProject}
+              >Projects</li>
+              <li className={aboutShown && 'selected'} onClick={showAbout}>
+                About
+              </li>
+            </ul>
           </nav>
           <div id='social'></div>
         </section>
         <section id='details'>
-          <div id='projects'>
-            <div className='proj' id='proj-one'>
-              <div className='proj-illu`str'>
-                <img width='100%' height='60px' src={shouldImage} />
+          {projectsShown && (
+            <div id='projects'>
+              <div className='proj' id='proj-one'>
+                <div className='proj-illu`str'>
+                  <img width='100%' height='60px' src={shouldImage} />
+                </div>
+                <div className='proj-descr'>
+                  <h2 className='project-name'>Should</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </p>
+                </div>
               </div>
-              <div className='proj-descr'>
-                <h2>Should — A Minimalist To-Do</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
+              <div className='proj' id='proj-two'>
+                <div className='proj-illustr'>
+                  <img width='100%' height='60px' src={rewordsImage} />
+                </div>
+                <div className='proj-descr'>
+                  <h2 className='project-name'>Rewords</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </p>
+                </div>
+              </div>
+              <div className='proj' id='proj-three'>
+                <div className='proj-illustr'>
+                  <img width='100%' height='60px' src={cmairImage} />
+                </div>
+                <div className='proj-descr'>
+                  <h2 className='project-name'>Chiang Mai AQI</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className='proj' id='proj-two'>
-              <div className='proj-illustr'>
-                <img width='100%' height='60px' src={rewordsImage} />
-              </div>
-              <div className='proj-descr'>
-                <h2>Rewords — Text Replacer</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-              </div>
+          )}
+          {aboutShown && (
+            <div id='about'>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. Lorem Ipsum is
+              simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the
+              1500s, when an unknown printer took a galley of type and scrambled
+              it to make a type specimen book.
             </div>
-            <div className='proj' id='proj-three'>
-              <div className='proj-illustr'>
-                <img width='100%' height='60px' src={cmairImage} />
-              </div>
-              <div className='proj-descr'>
-                <h2>Air Quality in Chiang Mai</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-              </div>
+          )}
+          {projectsShown && (
+            <div id='stack'>
+              <ul>
+                <li>Python</li>
+                <li> JavaScript</li>
+                <li> CSS</li>
+                <li> React</li>
+                <li> Git</li>
+                <li> Sass</li>
+                <li> TypeScript</li>
+                <li> jQuery</li>
+                <li> Flask</li>
+                <li> PWA</li>
+                <li> HTML</li>
+                <li> Netlify</li>
+                <li> Bootstrap</li>
+                <li> Web API</li>
+                <li> Font Awesome</li>
+              </ul>
             </div>
-          </div>
-          <div id='about'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when
-            an unknown printer took a galley of type and scrambled it to make a
-            type specimen book.
-          </div>
-          <div id='stack'>teack</div>
+          )}
+          {aboutShown && (
+            <div id='links'>
+              <ul>
+                <li>Github</li>
+                <li>Codewars</li>
+                <li>Codepen</li>
+                <li>LinkedIn</li>
+                <li>Instagram</li>
+                <li>Threads</li>
+              </ul>
+            </div>
+          )}
         </section>
       </div>
     </div>
