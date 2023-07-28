@@ -3,11 +3,33 @@ import './App.css';
 import cmairImage from './static/cmair.png';
 import rewordsImage from './static/rewords.png';
 import shouldImage from './static/should.png';
-import { useState } from 'react';
+import codewarsLogo from './static/codewars.svg';
+import threadsLogo from './static/threads.png';
+import React, { useState } from 'react';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub,
+  faCodepen,
+  faLinkedin,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 function App() {
   const [projectsShown, setProjectsShown] = useState(true);
   const [aboutShown, setAboutShown] = useState(false);
+
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
+  const handleIconClick = () => {
+    navigator.clipboard.writeText('thesanderbell@gmail.com');
+
+    setTooltipVisible(true);
+    setTimeout(() => {
+      setTooltipVisible(false);
+    }, 3000);
+  };
 
   function showProject() {
     setProjectsShown(true);
@@ -23,17 +45,13 @@ function App() {
     <div className='App'>
       <div id='flex-container'>
         <section id='hi'>
-          <h1 id='hello-sander'>Hello, I'm Sander</h1>
-          <p id='intro'>
-            Lorem Ipsum is simply dummys imply dummysimply dummy textLorem Ipsum
-            is simply dummy text of the printing and
-          </p>
+          <h1 id='hello-sander'>Sander Bell</h1>
+          <p id='intro'>Sleek designs, efficient code, top-notch adaptivity</p>
           <nav>
             <ul>
-              <li
-                className={projectsShown && 'selected'}
-                onClick={showProject}
-              >Projects</li>
+              <li className={projectsShown && 'selected'} onClick={showProject}>
+                Projects
+              </li>
               <li className={aboutShown && 'selected'} onClick={showAbout}>
                 About
               </li>
@@ -121,18 +139,98 @@ function App() {
                 <li> Bootstrap</li>
                 <li> Web API</li>
                 <li> Font Awesome</li>
+                <li> Figma</li>
               </ul>
             </div>
           )}
           {aboutShown && (
             <div id='links'>
               <ul>
-                <li>Github</li>
-                <li>Codewars</li>
-                <li>Codepen</li>
-                <li>LinkedIn</li>
-                <li>Instagram</li>
-                <li>Threads</li>
+                <li className='icon'>
+                  <a
+                    rel='noreferrer'
+                    target='_blank'
+                    href='https://github.com/sanderbell'
+                  >
+                    <FontAwesomeIcon
+                      title='GitHub'
+                      icon={faGithub}
+                      style={{ color: '#000' }}
+                    />
+                  </a>
+                </li>
+                <li className='icon'>
+                  {' '}
+                  <a
+                    rel='noreferrer'
+                    target='_blank'
+                    href='https://codewars.com/users/sanderbell'
+                  >
+                    <img
+                      title='CodeWars'
+                      className='svg-icon'
+                      src={codewarsLogo}
+                    />
+                  </a>
+                </li>
+                <li className='icon'>
+                  {' '}
+                  <a
+                    rel='noreferrer'
+                    target='_blank'
+                    href='https://codepen.io/sanderbell'
+                  >
+                    <FontAwesomeIcon
+                      title='CodePen'
+                      icon={faCodepen}
+                      style={{ color: '#000' }}
+                    />
+                  </a>
+                </li>
+                <li className='icon'>
+                  <a
+                    rel='noreferrer'
+                    target='_blank'
+                    href='https://www.linkedin.com/in/sanderbell'
+                  >
+                    <FontAwesomeIcon
+                      title='LinkedIn'
+                      icon={faLinkedin}
+                      style={{ color: '#000' }}
+                    />
+                  </a>
+                </li>
+                <li className='icon'>
+                  <a
+                    rel='noreferrer'
+                    target='_blank'
+                    href='https://www.instagram.com/sanderbell'
+                  >
+                    <FontAwesomeIcon
+                      title='Instagram'
+                      icon={faInstagram}
+                      style={{ color: '#000' }}
+                    />
+                  </a>
+                </li>
+                <li className='icon'>
+                  <img title='Threads' className='svg-icon' src={threadsLogo} />
+                </li>
+
+                <li className='icon'>
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ color: '#000' }}
+                    onClick={handleIconClick}
+                    data-tip='Copied!'
+                  />
+                  <ReactTooltip
+                    place='top'
+                    type='dark'
+                    effect='solid'
+                    visible={tooltipVisible}
+                  />
+                </li>
               </ul>
             </div>
           )}
