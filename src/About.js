@@ -1,11 +1,8 @@
-import myPhoto from './static/myphoto.jpg';
+// import myPhoto from './static/myphoto.jpg';
 
 function About() {
   return (
     <div id='about'>
-      <div id='my-photo-wrapper'>
-        <img alt='' id='my-photo' src={myPhoto} draggable='false' />
-      </div>
       <p>
         Hello, I'm Sander. In my previous career, I was a media specialist and
         manager, responsible for leading editorial teams, overseeing

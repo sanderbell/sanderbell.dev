@@ -1,13 +1,44 @@
+//  STYLES  //
 import './App.css';
+
+//  PACKAGES  //
+
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+
+//  MY MODULES  //
 import Projects from './Projects';
 import About from './About';
 import Links from './Links';
 import Stack from './Stack';
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import { AttentionSeeker } from 'react-awesome-reveal';
+
+//  MY FILES  //
+import myPhoto from './static/myphoto.jpg';
 
 function App() {
+  const currentPath = window.location.pathname;
+
+  useEffect(() => {
+    if (
+      currentPath === '/' ||
+      currentPath === '/projects' ||
+      currentPath === '/projects/'
+    ) {
+      showProject();
+    } else if (currentPath === '/about' || currentPath === '/about/') {
+      showAbout();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPath]);
+
+  const [animationStyle, setAnimationStyle] = useState({});
+
+  useEffect(() => {
+    setAnimationStyle({
+      animation: 'fade-in 1s ease',
+    });
+  }, []);
+
   const [projectsShown, setProjectsShown] = useState(true);
   const [aboutShown, setAboutShown] = useState(false);
 
@@ -23,31 +54,41 @@ function App() {
 
   return (
     <Router>
-      <div className='App'>
+      <div
+        className='App'
+        style={{
+          animation: 'fade-in 1s ease',
+        }}
+      >
         <div id='flex-container'>
-          <section id='hi'>
-            <AttentionSeeker delay={500} effect='pulse'>
-              <h1 id='hello-sander'>Sander Bell</h1>
-            </AttentionSeeker>
-            <p id='intro'>Clean designs, efficient code, user-centered focus</p>
+          <section style={animationStyle} id='hi'>
+            <Link to={projectsShown ? '/about' : '/projects'}>
+              <img
+                style={{
+                  opacity: aboutShown ? '0.9' : '0.6',
+                }}
+                alt=''
+                id='my-photo'
+                src={myPhoto}
+                draggable='false'
+                onClick={projectsShown ? showAbout : showProject}
+              />
+            </Link>
+            <h1 id='hello-sander'>Sander Bell</h1>
+            <p id='intro'>
+              Web developer specializing in clean designs, efficient code, and
+              user-centered solutions
+            </p>
             <nav>
               <ul>
                 <li
-                  className={
-                    projectsShown && window.location.pathname === '/projects' // FIXME:
-                      ? 'selected'
-                      : ''
-                  }
+                  className={projectsShown ? 'selected' : ''}
                   onClick={showProject}
                 >
                   <Link to='/projects'>Projects</Link>
                 </li>
                 <li
-                  className={
-                    aboutShown && window.location.pathname === '/about' // FIXME:
-                      ? 'selected'
-                      : ''
-                  }
+                  className={aboutShown ? 'selected' : ''}
                   onClick={showAbout}
                 >
                   <Link to='/about'>About</Link>
@@ -56,7 +97,12 @@ function App() {
             </nav>
             <div id='social'></div>
           </section>
-          <section id='details'>
+          <section
+            style={{
+              animation: currentPath ? 'fade-in 2s ease' : '',
+            }}
+            id='details'
+          >
             <Routes>
               <Route
                 path='/'

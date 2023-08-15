@@ -92,7 +92,7 @@ function Links() {
             />
           </a>
         </li>
-        <li className='icon'>
+        <li className='icon' style={{ margin: '0' }}>
           <img alt='' title='Threads' className='svg-icon' src={threadsLogo} />
         </li>
       </ul>

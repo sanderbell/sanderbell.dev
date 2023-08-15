@@ -5,6 +5,9 @@ html {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  font-size: 17px;
+  background-color: #fffff5;
+
 }
 
 body {
@@ -13,18 +16,17 @@ body {
   padding: 0;
   width: 100%;
   background-color: #fffff5;
-  
 }
 
 *,
 *::before,
 *::after {
-  /* border: 0.1px solid #e4a3a3; */
+  /* border: 0.1px solid #a7a7a7; */
   box-sizing: inherit;
   font-family: 'Assistant', sans-serif;
   margin: 0;
   padding: 0;
-  user-select: none;
+  /* user-select: none; */
 }
 
 #root {
@@ -36,14 +38,13 @@ body {
 }
 
 .App {
-
   padding: 1rem;
   width: 100%;
 }
 
 #flex-container {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1200px;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
@@ -60,29 +61,29 @@ a {
 }
 
 #details {
+  max-height: 100%;
   width: 60%;
+  transition: all 1.5s ease;
 }
 
 #projects {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
+
 }
 
 
 #hello-sander {
   font-family: 'Lusitana';
-  font-size: 3.3rem;
+  font-size: 2.7rem;
   margin: 0 0 1rem 0;
   transition: transform 0.5s ease;
 }
 
-#hello-sander:hover {
-  transform: scale(1.05);
-}
-
 #intro {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .project-name {
@@ -103,8 +104,8 @@ li {
 }
 
 .proj img {
-  max-width: 100%;
-  border-radius: 0.7em;
+  width: 100%;
+  border-radius: 0.6em;
 }
 
 .proj {
@@ -138,20 +139,26 @@ nav li:hover {
 
 }
 
-#my-photo-wrapper {
+/* #my-photo-wrapper {
   text-align: center;
-}
+} */
 
 #my-photo {
-  width: 140px;
+  width: 150px;
   border-radius: 50%;
   margin-bottom: 1em;
-  opacity: 0.8;
+  transition: all 1.5s ease;
 }
+
+#my-photo:hover {
+  cursor: pointer;
+}
+
 
 #links {
   font-size: 23px;
   text-align: center;
+  margin: 0 auto;
 
 }
 
@@ -174,27 +181,149 @@ nav li:hover {
   transform: translateY(-0.15em);
 }
 
-/* .scrolling {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
 
-.scrolling ul {
-  display: inline-block;
-  animation: scrolling 30s linear infinite;
-}
-
-.scrolling ul:nth-child(2) {
-  animation-delay: 30s;
-}
-
-@keyframes scrolling {
+@keyframes fade-in {
   0% {
-    transform: translateX(0);
+    opacity: 0;
   }
 
   100% {
-    transform: translateX(-100%);
+    opacity: 1;
   }
-} */
+
+
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+
+  .App {
+    height: 100%;
+    max-width: 700px;
+  }
+
+  #flex-container {
+    margin-top: 1em;
+    padding: 0.4rem;
+    flex-direction: column;
+  }
+
+  #my-photo {
+    width: 25vw;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    transition: all 1.5s ease;
+  }
+
+  #hi {
+    width: 100%;
+    height: 100%;
+  }
+
+  #hello-sander {
+    font-size: 10vw;
+  }
+
+  #intro {
+    padding: 0 2em;
+  }
+
+  #details {
+    width: 100%;
+  }
+
+  #projects {
+    margin: 4vw 0 0 0;
+    flex-direction: column;
+  }
+
+  #about {
+    margin: 4vw 0 0 0;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+
+  #stack {
+    margin-bottom: 2em;
+    padding-bottom: 0;
+  }
+
+  .proj {
+    padding: 1em;
+    max-width: 100%;
+  }
+
+  #links {
+    margin: 4vw 0;
+    font-size: 4vw;
+    padding: 0;
+  }
+
+  .svg-icon {
+    width: 4vw;
+  }
+
+
+}
+
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .App {
+    height: 100%;
+  }
+
+  #flex-container {
+    display: block;
+  }
+
+  #hi {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48%;
+    position: fixed;
+  }
+
+  #my-photo {
+    width: 20vw;
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    transition: all 1.5s ease;
+  }
+
+  #intro {
+    padding: 0 2em;
+  }
+
+  #details {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
+  #projects {
+    margin: 4vw 0 0 0;
+    flex-direction: column;
+  }
+
+  .proj {
+    padding: 1em;
+    max-width: 100%;
+  }
+
+  #links {
+    margin: 3vw 0;
+    font-size: 3vw;
+    padding: 0;
+  }
+
+  .svg-icon {
+    width: 3vw;
+  }
+
+}
