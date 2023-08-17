@@ -2,20 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
 
 html {
+  background-color: #fffff5;
   box-sizing: border-box;
+  font-size: 17px;
   height: 100%;
   width: 100%;
-  font-size: 17px;
-  background-color: #fffff5;
-
 }
 
 body {
+  background-color: #fffff5;
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #fffff5;
 }
 
 *,
@@ -43,36 +42,46 @@ body {
 }
 
 #flex-container {
-  margin: 0 auto;
-  max-width: 1200px;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 a {
-  text-decoration: none;
   color: unset;
+  text-decoration: none;
 }
 
 #hi {
+  position: relative;
   text-align: center;
   width: 30%;
 }
 
+#my-photo {
+  border-radius: 25%;
+  margin-bottom: 1em;
+  transition: all 1.5s ease;
+  width: 150px;
+}
+
+#my-photo:hover {
+  cursor: pointer;
+}
+
 #details {
   max-height: 100%;
-  width: 60%;
   transition: all 1.5s ease;
+  width: 60%;
 }
 
 #projects {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
-
 }
-
 
 #hello-sander {
   font-family: 'Lusitana';
@@ -84,11 +93,6 @@ a {
 #intro {
   margin-bottom: 1rem;
   text-align: center;
-}
-
-.project-name {
-  font-size: 1.33rem;
-  margin: 0.6rem 0;
 }
 
 li {
@@ -104,62 +108,91 @@ li {
 }
 
 .proj img {
-  width: 100%;
   border-radius: 0.6em;
+  width: 100%;
 }
 
 .proj {
   max-width: 33%;
 }
 
-#stack {
-  box-shadow: inset 0 0 10px 5px #fffff5;
-  /* DO INSET BOX SHADOW */
+.project-name {
+  font-size: 1.2rem;
+  margin: 0 10px 0 0;
 }
+
+.header-with-icon {
+  align-items: center;
+  display: flex;
+  padding: 0.6em 0;
+}
+
+.link-icon {
+  font-size: 0.65em;
+  opacity: 0.4;
+  transform: translateY(-0.1em);
+  transition: all 0.5s ease-in-out;
+}
+
+.link-icon:hover,
+.link-icon:focus-visible {
+  opacity: 0.8;
+  transform: rotate(45deg);
+}
+
+
+#stack {
+  position: relative;
+  overflow: hidden;
+}
+
+#stack:before,
+#stack:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 2;
+}
+
+#stack:before {
+  left: 10px;
+  box-shadow: inset 15px 0 15px 0px #fffff5;
+
+}
+
+#stack:after {
+  right: 10px;
+  box-shadow: inset -15px 0 15px 0px #fffff5;
+
+
+}
+
 
 #stack li {
   border: 0.1px solid #dcdcdc;
   border-radius: 0.6em;
+  font-size: 0.8rem;
   margin: 0.3em;
   padding: 0.4em 0.6em;
-  font-size: 0.8rem;
   transition: transform 0.5s ease;
 }
 
-
 nav li:hover {
   cursor: pointer;
-
 }
 
 .selected {
   border-bottom: #393939 0.1px solid;
-  padding-bottom: 0.3em;
   color: #181818;
-
+  padding-bottom: 0.3em;
 }
-
-/* #my-photo-wrapper {
-  text-align: center;
-} */
-
-#my-photo {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1em;
-  transition: all 1.5s ease;
-}
-
-#my-photo:hover {
-  cursor: pointer;
-}
-
 
 #links {
   font-size: 23px;
-  text-align: center;
   margin: 0 auto;
-
+  text-align: center;
 }
 
 .icon {
@@ -181,7 +214,6 @@ nav li:hover {
   transform: translateY(-0.15em);
 }
 
-
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -190,38 +222,46 @@ nav li:hover {
   100% {
     opacity: 1;
   }
-
-
 }
 
-@media (max-width: 800px) and (orientation: portrait) {
+/* .tooltip {
+  background-color: rgba(227, 124, 124, 0.8);
+  border-radius: 4px;
+  color: white;
+  opacity: 0;
+  padding: 6px 10px;
+  transition: opacity 0.3s;
+}
 
+.tooltip.show {
+  opacity: 1;
+} */
+
+@media (max-width: 800px) and (orientation: portrait) {
   .App {
     height: 100%;
     max-width: 700px;
   }
 
   #flex-container {
+    flex-direction: column;
     margin-top: 1em;
     padding: 0.4rem;
-    flex-direction: column;
   }
 
   #my-photo {
-    width: 25vw;
-    max-width: 150px;
-    border-radius: 50%;
     margin-bottom: 1em;
-    transition: all 1.5s ease;
+    max-width: 150px;
+    width: 25vw;
   }
 
   #hi {
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 
   #hello-sander {
-    font-size: 10vw;
+    font-size: 11vw;
   }
 
   #intro {
@@ -233,8 +273,8 @@ nav li:hover {
   }
 
   #projects {
-    margin: 4vw 0 0 0;
     flex-direction: column;
+    margin: 4vw 0 0 0;
   }
 
   #about {
@@ -243,33 +283,28 @@ nav li:hover {
     padding-right: 1em;
   }
 
-
   #stack {
     margin-bottom: 2em;
     padding-bottom: 0;
   }
 
   .proj {
-    padding: 1em;
     max-width: 100%;
+    padding: 1em;
   }
 
   #links {
-    margin: 4vw 0;
     font-size: 4vw;
+    margin: 4vw 0;
     padding: 0;
   }
 
   .svg-icon {
     width: 4vw;
   }
-
-
 }
 
-
 @media (max-width: 900px) and (orientation: landscape) {
-
   .App {
     height: 100%;
   }
@@ -279,18 +314,18 @@ nav li:hover {
   }
 
   #hi {
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     width: 48%;
-    position: fixed;
   }
 
   #my-photo {
-    width: 20vw;
-    max-width: 100px;
     border-radius: 50%;
     margin-bottom: 1em;
+    max-width: 100px;
     transition: all 1.5s ease;
+    width: 20vw;
   }
 
   #intro {
@@ -298,32 +333,30 @@ nav li:hover {
   }
 
   #details {
-    width: 50%;
-    position: absolute;
     left: 50%;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 50%;
   }
 
-
   #projects {
-    margin: 4vw 0 0 0;
     flex-direction: column;
+    margin: 4vw 0 0 0;
   }
 
   .proj {
-    padding: 1em;
     max-width: 100%;
+    padding: 1em;
   }
 
   #links {
-    margin: 3vw 0;
     font-size: 3vw;
+    margin: 3vw 0;
     padding: 0;
   }
 
   .svg-icon {
     width: 3vw;
   }
-
 }

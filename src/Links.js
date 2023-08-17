@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
@@ -8,19 +9,33 @@ import {
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import codewarsLogo from './static/codewars.svg';
 import threadsLogo from './static/threads.png';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 function Links() {
+  const [showTooltip, setShowTooltip] = useState(false);
+
   const handleIconClick = () => {
     navigator.clipboard.writeText('thesanderbell@gmail.com');
+    setShowTooltip(true);
   };
+
+  useEffect(() => {
+    if (showTooltip) {
+      const timeout = setTimeout(() => {
+        setShowTooltip(false);
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [showTooltip]);
 
   return (
     <div id='links'>
       <ul>
         <li className='icon'>
           <FontAwesomeIcon
-            data-tip
-            data-for='customEventTooltip'
+            data-tip='Click to copy'
+            data-tooltip-id='emailTooltip'
             onClick={handleIconClick}
             icon={faEnvelope}
             style={{ color: '#000' }}
@@ -96,6 +111,17 @@ function Links() {
           <img alt='' title='Threads' className='svg-icon' src={threadsLogo} />
         </li>
       </ul>
+      <ReactTooltip
+        id='emailTooltip'
+        place='top'
+        delayHide={2000}
+        effect='solid'
+        className={`tooltip ${showTooltip ? 'show' : ''}`}
+      >
+        {showTooltip && (
+          <span style={{ fontSize: '0.9rem' }}>Email copied!</span>
+        )}
+      </ReactTooltip>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import Marquee from 'react-fast-marquee';
+
 function Stack() {
   const skills = [
     'Python',
@@ -33,11 +35,13 @@ function Stack() {
 
   return (
     <div id='stack' className='scrolling'>
-      <ul>
-        {shuffledSkills.map((skill, index) => (
-          <li key={index}>{skill}</li>
-        ))}
-      </ul>
+      <Marquee direction='left' speed={30}>
+        <ul>
+          {shuffledSkills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))}
+        </ul>
+      </Marquee>
     </div>
   );
 }

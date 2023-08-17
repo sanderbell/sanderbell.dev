@@ -5,6 +5,7 @@ import './App.css';
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 //  MY MODULES  //
 import Projects from './Projects';
@@ -14,6 +15,8 @@ import Stack from './Stack';
 
 //  MY FILES  //
 import myPhoto from './static/myphoto.jpg';
+
+
 
 function App() {
   const currentPath = window.location.pathname;
@@ -117,8 +120,17 @@ function App() {
                 path='/projects'
                 element={
                   <>
-                    <Projects />
-                    <Stack />
+                    <CSSTransition
+                      in={projectsShown}
+                      timeout={500}
+                      classNames='fade'
+                      unmountOnExit
+                    >
+                      <>
+                        <Projects />
+                        <Stack />
+                      </>
+                    </CSSTransition>
                   </>
                 }
               />
