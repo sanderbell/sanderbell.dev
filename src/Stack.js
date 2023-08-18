@@ -35,7 +35,7 @@ function Stack() {
 
   return (
     <div id='stack' className='scrolling'>
-      <Marquee direction='left' speed={20}>
+      <Marquee direction='left' speed={45}>
         <ul>
           {shuffledSkills.map((skill, index) => (
             <li key={index}>{skill}</li>

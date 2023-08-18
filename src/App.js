@@ -68,6 +68,7 @@ function App() {
                 style={{
                   opacity: aboutShown ? '0.9' : '0.6',
                 }}
+                className={projectsShown ? '' : 'pressed'}
                 alt=''
                 id='my-photo'
                 src={myPhoto}
@@ -118,17 +119,8 @@ function App() {
                 path='/projects'
                 element={
                   <>
-                    <CSSTransition
-                      in={projectsShown}
-                      timeout={500}
-                      classNames='fade'
-                      unmountOnExit
-                    >
-                      <>
-                        <Projects />
-                        <Stack />
-                      </>
-                    </CSSTransition>
+                    <Projects />
+                    <Stack />
                   </>
                 }
               />
