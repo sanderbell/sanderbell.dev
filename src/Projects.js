@@ -17,7 +17,9 @@ function Projects() {
         <div className='proj-descr'>
           <div className='header-with-icon'>
             <a href='https://should.today' target='_blank' rel='noreferrer'>
-              <h2 className='project-name'>Should</h2>
+              <h2 className='project-name'>
+                Should
+              </h2>
             </a>
             <a href='https://should.today' target='_blank' rel='noreferrer'>
               <FontAwesomeIcon
@@ -41,7 +43,9 @@ function Projects() {
         <div className='proj-descr'>
           <div className='header-with-icon'>
             <a href='https://rewords.app' target='_blank' rel='noreferrer'>
-              <h2 className='project-name'>Rewords</h2>
+              <h2 className='project-name'>
+                Rewords
+              </h2>
             </a>
             <a href='https://rewords.app' target='_blank' rel='noreferrer'>
               <FontAwesomeIcon
@@ -66,7 +70,9 @@ function Projects() {
         <div className='proj-descr'>
           <div className='header-with-icon'>
             <a href='https://cmair.today' target='_blank' rel='noreferrer'>
-              <h2 className='project-name'>Chiang Mai AQI</h2>
+              <h2 className='project-name'>
+                Chiang Mai AQI
+              </h2>
             </a>
             <a href='https://cmair.today' target='_blank' rel='noreferrer'>
               <FontAwesomeIcon

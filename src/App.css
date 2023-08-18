@@ -26,6 +26,7 @@ body {
   margin: 0;
   padding: 0;
   /* user-select: none; */
+
 }
 
 #root {
@@ -93,6 +94,7 @@ a {
 #intro {
   margin-bottom: 1rem;
   text-align: center;
+  color: #4f4f4f;
 }
 
 li {
@@ -114,6 +116,7 @@ li {
 
 .proj {
   max-width: 33%;
+
 }
 
 .project-name {
@@ -121,17 +124,28 @@ li {
   margin: 0 10px 0 0;
 }
 
+.proj-descr {
+  color: #4f4f4f;
+
+}
+
 .header-with-icon {
   align-items: center;
   display: flex;
+  max-width: fit-content;
   padding: 0.6em 0;
+}
+
+.header-with-icon:hover .link-icon {
+  opacity: 0.8;
+  transform: rotate(45deg);
 }
 
 .link-icon {
   font-size: 0.65em;
-  opacity: 0.4;
+  opacity: 0.3;
   transform: translateY(-0.1em);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .link-icon:hover,
@@ -140,43 +154,39 @@ li {
   transform: rotate(45deg);
 }
 
-
 #stack {
-  position: relative;
+
   overflow: hidden;
+  position: relative;
 }
 
 #stack:before,
 #stack:after {
+  bottom: 0;
   content: '';
   position: absolute;
   top: 0;
-  bottom: 0;
   width: 50px;
   z-index: 2;
 }
 
 #stack:before {
+  box-shadow: inset 10px 0 15px 3px #fffff5;
   left: 10px;
-  box-shadow: inset 15px 0 15px 0px #fffff5;
-
 }
 
 #stack:after {
+  box-shadow: inset -10px 0 15px 3px #fffff5;
   right: 10px;
-  box-shadow: inset -15px 0 15px 0px #fffff5;
-
-
 }
-
 
 #stack li {
   border: 0.1px solid #dcdcdc;
   border-radius: 0.6em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  color: #5d5d5d;
   margin: 0.3em;
   padding: 0.4em 0.6em;
-  transition: transform 0.5s ease;
 }
 
 nav li:hover {
@@ -224,21 +234,12 @@ nav li:hover {
   }
 }
 
-/* .tooltip {
-  background-color: rgba(227, 124, 124, 0.8);
-  border-radius: 4px;
-  color: white;
-  opacity: 0;
-  padding: 6px 10px;
-  transition: opacity 0.3s;
-}
 
-.tooltip.show {
-  opacity: 1;
-} */
 
-@media (max-width: 800px) and (orientation: portrait) {
+
+@media (max-width: 700px) and (orientation: portrait) {
   .App {
+    font-size: 93%;
     height: 100%;
     max-width: 700px;
   }
@@ -294,13 +295,13 @@ nav li:hover {
   }
 
   #links {
-    font-size: 4vw;
-    margin: 4vw 0;
+    font-size: 5vmin;
+    margin: 4vw 0 5vw 0;
     padding: 0;
   }
 
   .svg-icon {
-    width: 4vw;
+    width: 5vmin;
   }
 }
 

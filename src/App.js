@@ -16,8 +16,6 @@ import Stack from './Stack';
 //  MY FILES  //
 import myPhoto from './static/myphoto.jpg';
 
-
-
 function App() {
   const currentPath = window.location.pathname;
 
