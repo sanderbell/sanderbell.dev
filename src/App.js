@@ -5,7 +5,6 @@ import './App.css';
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 
 //  MY MODULES  //
 import Projects from './Projects';
