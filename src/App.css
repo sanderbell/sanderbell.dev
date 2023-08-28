@@ -54,7 +54,10 @@ body {
 a {
   color: #393939;
   text-decoration: none;
+
 }
+
+
 
 #hi {
   position: relative;
@@ -104,6 +107,9 @@ a {
 
 li {
   display: inline-block;
+}
+
+li:not(:last-child) {
   margin-right: 1em;
 }
 
@@ -220,6 +226,7 @@ nav li:hover {
 .svg-icon {
   transform: translateY(0.125em);
   width: 23px;
+
 }
 
 svg {
@@ -306,6 +313,7 @@ svg {
     font-size: 5vmin;
     margin: 4vw 0 5vw 0;
     padding: 0;
+    text-align: center;
   }
 
   .svg-icon {
