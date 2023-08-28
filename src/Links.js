@@ -9,6 +9,8 @@ import {
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import codewarsLogo from './static/codewars.svg';
 import threadsLogo from './static/threads.png';
+import cv from './static/cv.png';
+
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 function Links() {
@@ -32,6 +34,17 @@ function Links() {
   return (
     <div id='links'>
       <ul>
+        <li className='icon'>
+          <a rel='noreferrer' target='_blank' href='https://sanderbell.dev'>
+            <img
+              draggable='false'
+              alt='Download CV'
+              title='Download CV'
+              className='svg-icon'
+              src={cv}
+            />
+          </a>
+        </li>
         <li className='icon'>
           <FontAwesomeIcon
             data-tip='Click to copy'
@@ -68,7 +81,7 @@ function Links() {
             />
           </a>
         </li>
-        <li className='icon'>
+        {/* <li className='icon'>
           <a
             rel='noreferrer'
             target='_blank'
@@ -80,7 +93,7 @@ function Links() {
               style={{ color: '#000' }}
             />
           </a>
-        </li>
+        </li> */}
         <li className='icon'>
           <a
             rel='noreferrer'
@@ -98,7 +111,7 @@ function Links() {
           <a
             rel='noreferrer'
             target='_blank'
-            href='https://www.instagram.com/sanderbell'
+            href='https://www.instagram.com/belanovsky'
           >
             <FontAwesomeIcon
               title='Instagram'
@@ -107,9 +120,15 @@ function Links() {
             />
           </a>
         </li>
-        <li className='icon' style={{ margin: '0' }}>
-          <img alt='' title='Threads' className='svg-icon' src={threadsLogo} />
-        </li>
+        {/* <li className='icon' style={{ margin: '0' }}>
+          <img
+            draggable='false'
+            alt=''
+            title='Threads'
+            className='svg-icon'
+            src={threadsLogo}
+          />
+        </li> */}
       </ul>
       <ReactTooltip
         id='emailTooltip'
