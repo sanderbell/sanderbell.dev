@@ -35,11 +35,7 @@ function Links() {
     <div id='links'>
       <ul>
         <li className='icon'>
-          <a
-            rel='noreferrer'
-            target='_blank'
-            href='/Sander-Bell-CV.pdf'
-          >
+          <a rel='noreferrer' target='_blank' href='/Sander-Bell-CV.pdf'>
             <img
               draggable='false'
               alt='Open CV'
@@ -51,6 +47,7 @@ function Links() {
         </li>
         <li className='icon'>
           <FontAwesomeIcon
+            title='Copy email'
             data-tip='Click to copy'
             data-tooltip-id='emailTooltip'
             onClick={handleIconClick}
