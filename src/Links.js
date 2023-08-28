@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
-  faCodepen,
+  // faCodepen,
   faLinkedin,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import codewarsLogo from './static/codewars.svg';
-import threadsLogo from './static/threads.png';
+// import threadsLogo from './static/threads.png';
 import cv from './static/cv.png';
 
 import { Tooltip as ReactTooltip } from 'react-tooltip';
@@ -35,11 +35,15 @@ function Links() {
     <div id='links'>
       <ul>
         <li className='icon'>
-          <a rel='noreferrer' target='_blank' href='https://sanderbell.dev'>
+          <a
+            rel='noreferrer'
+            target='_blank'
+            href='/Sander-Bell-CV.pdf'
+          >
             <img
               draggable='false'
-              alt='Download CV'
-              title='Download CV'
+              alt='Open CV'
+              title='Open CV'
               className='svg-icon'
               src={cv}
             />
