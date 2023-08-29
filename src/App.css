@@ -4,7 +4,7 @@
 html {
   background-color: #fffff5;
   box-sizing: border-box;
-  font-size: 19px;
+  font-size: 18px;
   height: 100%;
   width: 100%;
 }
@@ -16,7 +16,7 @@ body {
   color: #404040;
   padding: 0;
   width: 100%;
-  line-height: 145%;
+  line-height: 125%;
 }
 
 *,
