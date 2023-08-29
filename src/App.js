@@ -64,10 +64,7 @@ function App() {
           <section style={animationStyle} id='hi'>
             <Link to={projectsShown ? '/about' : '/projects'}>
               <img
-                style={{
-                  opacity: aboutShown ? '0.9' : '0.6',
-                }}
-                className={projectsShown ? '' : 'pressed'}
+                className={projectsShown ? 'my-photo-inactive' : 'my-photo-active'}
                 alt=''
                 id='my-photo'
                 src={myPhoto}

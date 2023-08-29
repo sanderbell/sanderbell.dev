@@ -4,7 +4,7 @@
 html {
   background-color: #fffff5;
   box-sizing: border-box;
-  font-size: 17px;
+  font-size: 19px;
   height: 100%;
   width: 100%;
 }
@@ -13,9 +13,10 @@ body {
   background-color: #fffff5;
   height: 100%;
   margin: 0;
-  color: #393939;
+  color: #404040;
   padding: 0;
   width: 100%;
+  line-height: 145%;
 }
 
 *,
@@ -26,7 +27,6 @@ body {
   font-family: 'Assistant', sans-serif;
   margin: 0;
   padding: 0;
-  /* user-select: none; */
 
 }
 
@@ -57,8 +57,6 @@ a {
 
 }
 
-
-
 #hi {
   position: relative;
   text-align: center;
@@ -68,7 +66,7 @@ a {
 #my-photo {
   border-radius: 50%;
   margin-bottom: 1em;
-  /* transition: all 1.5s ease; */
+  transition: opacity 1.5s ease;
   width: 150px;
 }
 
@@ -76,9 +74,13 @@ a {
   cursor: pointer;
 }
 
-/* .pressed {
-  box-shadow: 2px 3px 5px 1px #ffb5b5;
-} */
+.my-photo-active {
+  opacity: 0.9;
+}
+
+.my-photo-inactive {
+  opacity: 0.6;
+}
 
 #details {
   max-height: 100%;
@@ -97,6 +99,7 @@ a {
   font-size: 2.7rem;
   margin: 0 0 1rem 0;
   transition: transform 0.5s ease;
+  line-height: 125%;
 }
 
 #intro {
@@ -216,12 +219,14 @@ nav li:hover {
 
 #link-to-resume {
   padding-bottom: 0.05em;
- border-bottom: #dcdcdc 0.1px solid;
+  border-bottom: #dcdcdc 0.1px solid;
+  transition: all 1.5s ease;
+
 }
 
 #link-to-resume:hover {
   padding-bottom: 0.05em;
- border-bottom: #393939 0.1px solid;
+  border-bottom: #393939 0.1px solid;
 }
 
 .icon {
@@ -322,7 +327,7 @@ svg {
 
   #links {
     font-size: 5vmin;
-    margin: 4vw 0 5vw 0;
+    margin: 5vw 0 5vw 0;
     padding: 0;
     text-align: center;
   }
