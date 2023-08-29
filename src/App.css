@@ -16,7 +16,7 @@ body {
   color: #404040;
   padding: 0;
   width: 100%;
-  line-height: 125%;
+  line-height: 130%;
 }
 
 *,
@@ -167,6 +167,7 @@ li:not(:last-child) {
 
   overflow: hidden;
   position: relative;
+  user-select: none;
 }
 
 #stack:before,
@@ -213,6 +214,8 @@ nav li:hover {
   font-size: 23px;
   margin: 0 auto;
   text-align: center;
+  user-select: none;
+
 
 
 }
