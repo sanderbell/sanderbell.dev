@@ -66,20 +66,23 @@ a {
 #my-photo {
   border-radius: 50%;
   margin-bottom: 1em;
-  transition: opacity 1.5s ease;
   width: 150px;
-}
-
-#my-photo:hover {
-  cursor: pointer;
-}
-
-.my-photo-active {
   opacity: 0.9;
 }
 
+/* #my-photo:hover {
+  cursor: pointer;
+} */
+
+/* .my-photo-active {
+  box-shadow: 0 0 30px 4px #124485;
+}
+
 .my-photo-inactive {
-  opacity: 0.6;
+} */
+
+.current-screen {
+  animation: fade-in 0.5s ease-in-out;
 }
 
 #details {
@@ -120,7 +123,7 @@ li:not(:last-child) {
 #about,
 #stack,
 #links {
-  padding: 0.6rem;
+  padding: 0.65rem;
 }
 
 .proj img {
@@ -261,10 +264,12 @@ svg {
 @keyframes fade-in {
   0% {
     opacity: 0;
+    filter: blur(10px);
   }
 
   100% {
     opacity: 1;
+    filter: none;
   }
 }
 

@@ -31,47 +31,42 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPath]);
 
-  const [animationStyle, setAnimationStyle] = useState({});
-
-  useEffect(() => {
-    setAnimationStyle({
-      animation: 'fade-in 1s ease',
-    });
-  }, []);
-
   const [projectsShown, setProjectsShown] = useState(true);
   const [aboutShown, setAboutShown] = useState(false);
+  const [triggerBlur, setTriggerBlur] = useState(false);
 
   function showProject() {
     setProjectsShown(true);
     setAboutShown(false);
+    setTriggerBlur(true);
+    setTimeout(() => {
+      setTriggerBlur(false);
+    }, 550);
   }
 
   function showAbout() {
     setProjectsShown(false);
     setAboutShown(true);
+    setTriggerBlur(true);
+    setTimeout(() => {
+      setTriggerBlur(false);
+    }, 550);
   }
 
   return (
     <Router>
-      <div
-        className='App'
-        style={{
-          animation: 'fade-in 1s ease',
-        }}
-      >
+      <div className='App'>
         <div id='flex-container'>
-          <section style={animationStyle} id='hi'>
-            <Link to={projectsShown ? '/about' : '/projects'}>
-              <img
-                className={projectsShown ? 'my-photo-inactive' : 'my-photo-active'}
-                alt=''
-                id='my-photo'
-                src={myPhoto}
-                draggable='false'
-                onClick={projectsShown ? showAbout : showProject}
-              />
-            </Link>
+          <section id='hi'>
+            {/* <Link to={projectsShown ? '/about' : '/projects'}> */}
+            <img
+              alt=''
+              id='my-photo'
+              src={myPhoto}
+              draggable='false'
+              // onClick={projectsShown ? showAbout : showProject}
+            />
+            {/* </Link> */}
             <h1 id='hello-sander'>Sander Bell</h1>
             <p id='intro'>
               Web developer specializing in clean designs, efficient code, and
@@ -95,12 +90,7 @@ function App() {
             </nav>
             <div id='social'></div>
           </section>
-          <section
-            style={{
-              animation: currentPath ? 'fade-in 2s ease' : '',
-            }}
-            id='details'
-          >
+          <section className={triggerBlur ? 'current-screen' : ''} id='details'>
             <Routes>
               <Route
                 path='/'
