@@ -35,7 +35,7 @@ function Links() {
     <div id='links'>
       <ul>
         <li className='icon'>
-          <a rel='noreferrer' target='_blank' href='/Sander-Bell-CV.pdf'>
+          <a rel='noreferrer' target='_blank' href='/sander-resume.pdf'>
             <img
               draggable='false'
               alt='Open CV'

@@ -213,6 +213,16 @@ nav li:hover {
 
 }
 
+#link-to-resume {
+  padding-bottom: 0.05em;
+ border-bottom: #dcdcdc 0.1px solid;
+}
+
+#link-to-resume:hover {
+  padding-bottom: 0.05em;
+ border-bottom: #393939 0.1px solid;
+}
+
 .icon {
   opacity: 0.65;
 

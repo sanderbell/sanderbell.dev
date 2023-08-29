@@ -15,8 +15,11 @@ function About() {
         Some time ago, I unexpectedly fell in love with programming and, to my
         surprise, realized that I had a knack for it. I discovered that web
         development is what I want to pursue in my life moving forward. I would
-        be delighted if my skills and knowledge could help you bring your ideas
-        and projects to fruition.
+        be delighted if{' '}
+        <a target='_blank' id='link-to-resume' href='/sander-resume.pdf'>
+          my skills and knowledge
+        </a>{' '}
+        could help you bring your ideas and projects to fruition.
       </p>
     </div>
   );
