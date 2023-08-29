@@ -33,7 +33,7 @@ function App() {
 
   const [projectsShown, setProjectsShown] = useState(true);
   const [aboutShown, setAboutShown] = useState(false);
-  const [triggerBlur, setTriggerBlur] = useState(false);
+  const [triggerBlur, setTriggerBlur] = useState(undefined);
 
   function showProject() {
     setProjectsShown(true);
@@ -90,7 +90,10 @@ function App() {
             </nav>
             <div id='social'></div>
           </section>
-          <section className={triggerBlur ? 'current-screen' : ''} id='details'>
+          <section
+            className={triggerBlur ? 'current-screen' : ''}
+            id='details'
+          >
             <Routes>
               <Route
                 path='/'
