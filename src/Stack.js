@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import Marquee from 'react-fast-marquee';
 
 function Stack() {
@@ -31,7 +32,7 @@ function Stack() {
     return array;
   };
 
-  const shuffledSkills = shuffle([...skills]);
+  const shuffledSkills = useMemo(() => shuffle([...skills]), []);
 
   return (
     <div id='stack' className='scrolling'>

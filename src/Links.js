@@ -7,7 +7,7 @@ import {
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import codewarsLogo from './static/codewars.svg';
+import codewarsLogo from './static/codewars.png';
 // import threadsLogo from './static/threads.png';
 import cv from './static/cv.png';
 
@@ -75,6 +75,7 @@ function Links() {
             href='https://codewars.com/users/sanderbell'
           >
             <img
+              draggable='false'
               alt=''
               title='CodeWars'
               className='svg-icon'

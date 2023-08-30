@@ -218,8 +218,12 @@ nav li:hover {
   margin: 0 auto;
   text-align: center;
   user-select: none;
+}
 
-
+#links ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -246,8 +250,8 @@ nav li:hover {
 }
 
 .svg-icon {
-  transform: translateY(0.125em);
-  width: 23px;
+  /* transform: translateY(0.125em); */
+  height: 23px;
 
 }
 
@@ -255,11 +259,11 @@ svg {
   outline: none;
 }
 
-#email {
-  font-size: 1rem;
+/* #email {
+  font-size: 1.31rem;
   transform: translateY(-0.15em);
   outline: none;
-}
+} */
 
 @keyframes blur-in {
   0% {
