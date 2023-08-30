@@ -167,7 +167,6 @@ li:not(:last-child) {
 }
 
 #stack {
-
   overflow: hidden;
   position: relative;
   user-select: none;
@@ -251,7 +250,7 @@ nav li:hover {
 
 .svg-icon {
   /* transform: translateY(0.125em); */
-  height: 23px;
+  width: 23px;
 
 }
 
