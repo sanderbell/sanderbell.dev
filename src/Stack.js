@@ -31,7 +31,7 @@ function Stack() {
     }
     return array;
   };
-
+  //eslint-disable-next-line
   const shuffledSkills = useMemo(() => shuffle([...skills]), []);
 
   return (
