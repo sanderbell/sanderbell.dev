@@ -102,7 +102,6 @@ a {
   margin: 0 0 1rem 0;
   transition: transform 0.5s ease;
   line-height: 125%;
-  font-variation-settings: "opsz" 10;
 
 }
 
@@ -158,9 +157,10 @@ li:not(:last-child) {
 
 .header-with-icon {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   max-width: fit-content;
   padding: 0.6em 0;
+
 }
 
 .header-with-icon:hover .link-icon {
@@ -365,6 +365,7 @@ svg {
     top: 50%;
     transform: translateY(-50%);
     width: 48%;
+    max-height: 95%;
   }
 
   #my-photo {
@@ -384,17 +385,20 @@ svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50%;
+    width: 48%;
+    padding: 1em;
   }
 
   #projects {
     flex-direction: column;
     margin: 4vw 0 0 0;
+    padding: 0;
+    margin-top: 0;
   }
 
   .proj {
     max-width: 100%;
-    padding: 1em;
+    /* padding: 1em; */
   }
 
   #links {
