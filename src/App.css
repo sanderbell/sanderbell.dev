@@ -17,6 +17,8 @@ body {
   padding: 0;
   width: 100%;
   line-height: 130%;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  text-rendering: optimizeLegibility !important;
 }
 
 *,
