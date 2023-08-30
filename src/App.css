@@ -17,6 +17,7 @@ body {
   padding: 0;
   width: 100%;
   line-height: 130%;
+  animation: color-n-blur 0.8s ease-out;
 }
 
 *,
@@ -279,6 +280,19 @@ svg {
   }
 }
 
+@keyframes color-n-blur {
+  0% {
+    filter: blur(3px) grayscale(1);
+
+  }
+
+  100% {
+
+    filter: none;
+    transform: none;
+
+  }
+}
 
 
 
