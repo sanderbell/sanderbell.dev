@@ -17,8 +17,6 @@ body {
   padding: 0;
   width: 100%;
   line-height: 130%;
-  -webkit-font-smoothing: subpixel-antialiased !important;
-  text-rendering: optimizeLegibility !important;
 }
 
 *,
@@ -100,12 +98,12 @@ a {
 
 #hello-sander {
   font-family: 'Lusitana';
-  /* font-weight: 600; */
   font-size: 2.7rem;
   margin: 0 0 1rem 0;
   transition: transform 0.5s ease;
   line-height: 125%;
-  letter-spacing: 0.01em;
+  font-variation-settings: "opsz" 10;
+
 }
 
 #intro {
