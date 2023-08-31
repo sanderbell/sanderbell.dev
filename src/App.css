@@ -17,7 +17,7 @@ body {
   padding: 0;
   width: 100%;
   line-height: 130%;
-  animation: color-n-blur 0.8s ease-out;
+  animation: color-n-blur 0.85s ease-out;
 }
 
 *,
@@ -101,7 +101,7 @@ a {
   font-family: 'Lusitana';
   font-size: 2.7rem;
   margin: 0 0 1rem 0;
-  transition: transform 0.5s ease;
+  transition: transform 0.2s ease;
   line-height: 125%;
 
 }
@@ -282,7 +282,7 @@ svg {
 
 @keyframes color-n-blur {
   0% {
-    filter: blur(3px) grayscale(1);
+    filter: blur(4px) grayscale(1);
 
   }
 
