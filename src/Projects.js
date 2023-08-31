@@ -36,7 +36,7 @@ function Projects() {
         <div className='proj-descr'>
           <div className='header-with-icon'>
             <a href='https://should.today' target='_blank' rel='noreferrer'>
-              <h2 className='project-name'>Should</h2>
+              <h2 className='project-name'>should:</h2>
             </a>
             <a href='https://should.today' target='_blank' rel='noreferrer'>
               <ArrowIcon />
