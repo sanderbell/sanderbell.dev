@@ -9,6 +9,7 @@ function Stack() {
     'React',
     'Git',
     'Sass',
+    'JSON',
     'TypeScript',
     'jQuery',
     'Flask',
