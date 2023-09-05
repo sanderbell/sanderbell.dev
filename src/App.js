@@ -69,7 +69,7 @@ function App() {
             {/* </Link> */}
             <h1 id='hello-sander'>Sander Bell</h1>
             <p id='intro'>
-              Web developer specializing in clean designs, efficient code, and
+              Full-stack web developer specializing in clean designs, efficient code, and
               user-centered solutions
             </p>
             <nav>
