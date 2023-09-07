@@ -113,7 +113,7 @@ function Links() {
           <a
             rel='noreferrer'
             target='_blank'
-            href='https://www.instagram.com/belanovsky'
+            href='https://www.instagram.com/sndr.bll'
           >
             <FontAwesomeIcon
               title='Instagram'
