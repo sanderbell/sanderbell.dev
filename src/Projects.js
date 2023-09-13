@@ -63,7 +63,7 @@ function Projects() {
           </div>
           <p>
             A browser extension that replaces specified words and phrases up to
-            40 characters on web pages as you browse. Various input validations
+            30 characters on web pages as you browse. Various input validations
             ensure you won't encounter any unexpected replacements on your
             screen.
           </p>
