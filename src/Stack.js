@@ -6,6 +6,7 @@ function Stack() {
     'Python',
     'JavaScript',
     'CSS3',
+    'Vue.js',
     'React',
     'Git',
     'Github',
