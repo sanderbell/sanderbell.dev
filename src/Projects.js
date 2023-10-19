@@ -6,6 +6,10 @@ import cmairImage from './static/cmair.png';
 import rewordsImage from './static/rewords.png';
 import shouldImage from './static/should.png';
 
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +20,14 @@ function ArrowIcon() {
 }
 
 function Projects() {
+  // var settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // };
+
   const shouldImg = useMemo(
     () => <img draggable='false' src={shouldImage} />,
     []
