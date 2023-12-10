@@ -20,14 +20,6 @@ function ArrowIcon() {
 }
 
 function Projects() {
-  // var settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
-
   const shouldImg = useMemo(
     () => <img draggable='false' src={shouldImage} />,
     []

@@ -1,4 +1,3 @@
-// import myPhoto from './static/myphoto.jpg';
 
 function About() {
   return (
@@ -14,7 +13,7 @@ function About() {
         <a target='_blank' id='link-to-resume' href='/sander-resume.pdf'>
           my skills and knowledge
         </a>{' '}
-        could help you bring your ideas and projects to fruition. 
+        could help you bring your ideas and projects to fruition.
       </p>
     </div>
   );
