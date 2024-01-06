@@ -10,7 +10,7 @@ function About() {
           href='https://ling-app.com'
         >
           Ling App
-        </a>{' '}
+        </a>
         , a mobile platform for learning languages. With two years of
         programming experience and over 15 years in communications, media
         management, and leading editorial roles, I understand the importance of
